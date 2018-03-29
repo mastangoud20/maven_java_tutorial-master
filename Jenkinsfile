@@ -35,16 +35,10 @@ pipeline {
                     junit 'NumberGenerator/target/surefire-reports/*.xml'
                         }
                  }
-               
-
-           
+                          
             }
         
-           stage ('Deploy') {
-            steps {
-                    bat 'cd NumberGenerator & mvn deploy'
-            }
-                }
+         
         }
     
 }
