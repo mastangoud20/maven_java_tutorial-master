@@ -39,6 +39,12 @@ pipeline {
 
            
             }
+        
+           stage ('Test') {
+            steps {
+                    bat 'cd NumberGenerator & mvn deploy'
+            }
+                }
         }
     
 }
