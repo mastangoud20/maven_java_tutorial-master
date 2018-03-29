@@ -40,7 +40,7 @@ pipeline {
            
             }
         
-           stage ('Test') {
+           stage ('Deploy') {
             steps {
                     bat 'cd NumberGenerator & mvn deploy'
             }
