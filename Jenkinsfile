@@ -13,10 +13,22 @@ pipeline {
                 '''
             }
         }
+        
+                stage ('Compile') {
+            steps {
+                    bat 'cd NumberGenerator & mvn compile'
+            }
+                }
+        
+                stage ('Test') {
+            steps {
+                    bat 'cd NumberGenerator & mvn test'
+            }
+                }
 
         stage ('Build') {
             steps {
-                    bat 'cd NumberGenerator & mvn install'
+                    bat 'cd NumberGenerator & mvn package'
             }
              post {
                 success {
