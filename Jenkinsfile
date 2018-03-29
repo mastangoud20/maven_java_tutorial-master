@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label "windows"
-    }
+    agent any
     tools {
         maven 'M2_HOME'
         jdk 'jdk1.8'
