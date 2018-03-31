@@ -1,12 +1,15 @@
 content added
 
 
-adfsd
+adfsdsdsd
 
 
 RTC commit was added
 
 
 RTC was added
+<<<<<<< HEAD
 
 fd
+=======
+>>>>>>> 3451525aa77505830d4acf35e7270b0992fbc966
