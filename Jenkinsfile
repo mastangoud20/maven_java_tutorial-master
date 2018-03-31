@@ -1,10 +1,8 @@
 pipeline {
-    agent {
-        label "windows"
-    }
+    agent any
     tools {
-        maven 'Maven3.1.1'
-        jdk 'java8'
+        maven 'M2_HOME'
+        jdk 'jdk1.8'
     }
     stages {
         stage ('Initialize') {
@@ -15,20 +13,32 @@ pipeline {
                 '''
             }
         }
+        
+                stage ('Compile') {
+            steps {
+                    bat 'cd NumberGenerator & mvn compile'
+            }
+                }
+        
+                stage ('Test') {
+            steps {
+                    bat 'cd NumberGenerator & mvn test'
+            }
+                }
 
         stage ('Build') {
             steps {
-                    bat 'cd NumberGenerator & mvn install'
+                    bat 'cd NumberGenerator & mvn package'
             }
              post {
                 success {
                     junit 'NumberGenerator/target/surefire-reports/*.xml'
                         }
                  }
-               
-
-           
+                          
             }
+        
+         
         }
     
 }
